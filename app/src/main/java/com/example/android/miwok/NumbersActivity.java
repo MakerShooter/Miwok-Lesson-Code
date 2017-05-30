@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,48 +15,24 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        String words[] = new String[10];
-        words[7] = "seven";
-        words[8] = "eight";
+        
 
-        Log.v("NumbersActivity", "Word at index 0: " + words[7]);
-        int i = 0;
-        while(i <10){
-            Log.v("NumbersActivity", "Word at index "+i+" : " + words[i]);
-            i++;
+        ArrayList<String> words = new ArrayList<String>();
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+        words.add("ten");
 
+        for(int i=0; i< words.size(); i++){
+            Log.v("NumbersActivity", "Word at index "+i+" : " + words.get(i));
         }
-        for(int n=0; i< words.length; n++){
-            Log.v("NumbersActivity", "Word at index "+i+" : " + words[i]);
-        }
-
-        ArrayList<String> wordsArray = new ArrayList<String>();
-        wordsArray.add("one");
-        wordsArray.add("two");
-        wordsArray.add("three");
-        wordsArray.add("four");
-        wordsArray.add("five");
-        wordsArray.add("six");
-        wordsArray.add("seven");
-        wordsArray.add("eight");
-        wordsArray.add("nine");
-        wordsArray.add("ten");
-
-        for(int n=0; i< wordsArray.size(); n++){
-            Log.v("NumbersActivity", "Word at index "+n+" : " + wordsArray.get(n));
-        }
-
-        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
-        TextView wordView = new TextView(this);
-        wordView.setText(wordsArray.get(0));
-        rootView.addView(wordView);
-
-        int indexItem=0;
-        while(indexItem<wordsArray.size()){
-            TextView wordView1 = new TextView(this);
-            wordView1.setText(wordsArray.get(indexItem));
-            rootView.addView(wordView1);
-        }
+        
 
 
         // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
