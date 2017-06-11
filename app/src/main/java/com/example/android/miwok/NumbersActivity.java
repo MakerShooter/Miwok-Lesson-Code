@@ -6,12 +6,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import static com.example.android.miwok.R.layout.word_list;
+
 public class NumbersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(word_list);
 
         
 
@@ -23,6 +25,18 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         words.add(new Word("one", "lutti"));
+        words.add(new Word("two", "lutti"));
+        words.add(new Word("three", "lutti"));
+        words.add(new Word("four", "lutti"));
+        words.add(new Word("five", "lutti"));
+        words.add(new Word("six", "lutti"));
+        words.add(new Word("seven", "lutti"));
+        words.add(new Word("eight", "lutti"));
+        words.add(new Word("nine", "lutti"));
+        words.add(new Word("ten", "lutti"));
+
+
+
 
 
         // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
@@ -36,7 +50,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // activity_numbers.xml layout file.
+        // word_listyout file.
         ListView listView = (ListView) findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
