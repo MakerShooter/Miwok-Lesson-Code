@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,11 +16,19 @@ import java.util.ArrayList;
  */
 
 public class WordAdapter extends ArrayAdapter<Word> {
+    private  int mColorId;
 
     public WordAdapter(Context context, ArrayList<Word> words) {
         super(context, 0, words);
     }
+    public WordAdapter(Context context, ArrayList<Word> words, int color) {
+        super(context, 0, words);
+        this.mColorId = color;
+    }
 
+    public int getmColorId() {
+        return mColorId;
+    }
 
     @NonNull
     @Override
@@ -36,7 +45,25 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Populate the data into the template view using the data object
         miwork_text.setText(Word.getmMiwokTranslation());
         default_text.setText(Word.getmDefaultTranslation());
+        boolean isImageAvailable = Word.isImage();
         // Return the completed view to render on screen
+
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView iconView = (ImageView) convertView.findViewById(R.id.list_item_icon);
+        // Get the image resource ID from the current AndroidFlavor object and
+        // set the image to iconView
+      if(Word.isImage())
+      {
+       iconView.setVisibility(View.VISIBLE);
+        iconView.setImageResource(Word.getmImageResourceId());
+      }
+        else
+      {
+          iconView.setVisibility(View.GONE);
+
+      }
+
+        convertView.setBackgroundResource(getmColorId());
         return convertView;
 
     }

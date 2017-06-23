@@ -15,21 +15,18 @@ public class PhrasesActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
 
 
-        Word w = new Word("one", "lutti");
-        words.add(w);
 
 
-        words.add(new Word("one", "lutti"));
-        words.add(new Word("two", "lutti"));
-        words.add(new Word("three", "lutti"));
-        words.add(new Word("four", "lutti"));
-        words.add(new Word("five", "lutti"));
-        words.add(new Word("six", "lutti"));
-        words.add(new Word("seven", "lutti"));
-        words.add(new Word("eight", "lutti"));
-        words.add(new Word("nine", "lutti"));
-        words.add(new Word("ten", "lutti"));
-
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("What is your name?", "tinnә oyaase'nә"));
+        words.add(new Word("My name is...", "oyaaset..."));
+        words.add(new Word("How are you feeling?", "michәksәs?"));
+        words.add(new Word("I’m feeling good.", "kuchi achit"));
+        words.add(new Word("Are you coming?", "әәnәs'aa?"));
+        words.add(new Word("Yes, I’m coming.", "hәә’ әәnәm"));
+        words.add(new Word("I’m coming.", "әәnәm"));
+        words.add(new Word("Let’s go.", "yoowutis"));
+        words.add(new Word("Come here.", "әnni'nem"));
 
 
 
@@ -39,7 +36,7 @@ public class PhrasesActivity extends AppCompatActivity {
         // simple_list_item_1.xml layout resource defined in the Android framework.
         // This list item layout contains a single {@link TextView}, which the adapter will set to
         // display a single word.
-        WordAdapter  adapter = new WordAdapter(this, words);
+        WordAdapter  adapter = new WordAdapter(this, words,R.color.category_phrases);
 
         // new ArrayAdapter<Word>(this, R.layout.list_items, words);
 
